@@ -427,15 +427,15 @@ body{
 @media screen and (max-width:768px) {
 
     .entry {
-        padding: 50px; /* Dostosuj padding na mniejszych ekranach */
-        flex-direction: column; /* Zmieniamy kierunek elementów na kolumnę */
-        align-items: center; /* Wyrównujemy elementy do środka w osi X */
+        padding: 50px; 
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .entry-text {
-        font-size: var(--title-medium); /* Dostosuj wielkość czcionki na mniejszych ekranach */
-        text-align: center; /* Wyśrodkuj tekst na mniejszych ekranach */
-        position: relative; /* Ustawienie pozycji na względną */
+        font-size: var(--title-medium); 
+        text-align: center; 
+        position: relative; 
         top: 100px; 
         margin-top: 2vh;
     }
@@ -518,15 +518,15 @@ body{
 @media screen and (max-width:456px) {
 
     .entry-text {
-        font-size: 8px; /* Dostosuj wielkość czcionki na jeszcze mniejszych ekranach */
+        font-size: 8px; 
         margin-top: 100px;
-        position: relative; /* Ustawienie pozycji na względną */
+        position: relative; 
         top: 100px; 
         margin-top: 3vh;
     }
 
     .entry {
-        padding: 20px; /* Dostosuj padding na jeszcze mniejszych ekranach */
+        padding: 20px; 
     }
 
     .hidden{
