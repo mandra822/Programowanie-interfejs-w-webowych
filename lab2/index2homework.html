@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div style="width: 200px; margin: 0 auto;">
+        
+    
+    <label for="task">Task to do: </label>
+    <br>
+    <input placeholder="Wpisz zadanie" id="task"/>
+   
+
+    <br>
+    <button onclick="taskToDo()">Dodaj do listy</button>
+    <button onclick="returnItem()" id="return-button">Przywróć ostatnio usunięty</button> 
+
+    <br>
+    <h2>Lista działań:</h2>
+    <ul id="unordered-list">
+        
+    </ul>
+    <dialog>
+        <div style="text-align: center;">
+            <h2>Pole nie może być puste</h2>
+            <button>OK, poprawię się</button>
+        </div>
+    </dialog>
+    <script src="./script2homework.js">
+       
+    </script>
+</div>
+</body>
+</html>
+

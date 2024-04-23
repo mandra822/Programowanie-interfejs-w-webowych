@@ -1,0 +1,9 @@
+ul li.checked {
+    color: #6b6969;
+    text-decoration: line-through;
+}
+
+ul li.unchecked {
+    color: #020202;
+    text-decoration: none;
+}
