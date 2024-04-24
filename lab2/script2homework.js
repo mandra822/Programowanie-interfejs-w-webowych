@@ -25,9 +25,19 @@ const taskToDo = () => {
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "X";
     deleteButton.onclick = function() {
-        lastRemovedListItem = listItem;
-        listItem.remove();
+        const modal = document.getElementById("confirm-to-delete");
+        modal.showModal();
+        modal.querySelector("#tak").addEventListener("click", () =>{
+            lastRemovedListItem = listItem;
+            listItem.remove();
+            modal.close();
+        });
+        modal.querySelector("#nie").addEventListener("click", () =>{
+            modal.close();
+        });
+        return;
     };
+    
     listItem.appendChild(deleteButton);
 
 
