@@ -1,5 +1,8 @@
 "use strict";
 
+var lastRemovedListItem = null;
+
+
 const taskToDo = () => { 
 
     const task = document.getElementById("task");
@@ -24,19 +27,20 @@ const taskToDo = () => {
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "X";
-    deleteButton.onclick = function() {
+    deleteButton.addEventListener("click", ()=>{
+        makeTaskDone(listItem, 'gray');
         const modal = document.getElementById("confirm-to-delete");
         modal.showModal();
-        modal.querySelector("#tak").addEventListener("click", () =>{
+        const yesClick = modal.querySelector("#tak").addEventListener("click", () =>{
             lastRemovedListItem = listItem;
             listItem.remove();
             modal.close();
-        });
+        }, {once : true});
         modal.querySelector("#nie").addEventListener("click", () =>{
             modal.close();
         });
         return;
-    };
+    });
     
     listItem.appendChild(deleteButton);
 
@@ -49,7 +53,6 @@ const taskToDo = () => {
     theList.append(listItem); 
 }
 
-var lastRemovedListItem = null;
 
 const returnItem = () => {
     if (lastRemovedListItem != null) {
@@ -57,7 +60,6 @@ const returnItem = () => {
         list.insertBefore(lastRemovedListItem, list.childNodes[0]);
         const returnButton = document.getElementById("return-button");
         returnButton.className = "return-button-disable";
-        makeTaskDone(lastRemovedListItem, 'gray');
         lastRemovedListItem = null;
 
     }
@@ -68,7 +70,7 @@ const makeTaskDone = (element, clr) => {
     const currentDateTime = now.toLocaleString();
     if(element.style.color === clr){
         element.style.color = 'black';
-        element.style.textDecoration = "none";
+        element.style.textDecoration = "";
         element.removeChild(element.lastChild);
     }
     else{ 
