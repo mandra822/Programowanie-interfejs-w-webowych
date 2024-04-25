@@ -1,9 +1,57 @@
-ul li.checked {
-    color: #6b6969;
-    text-decoration: line-through;
+/* style.css */
+
+body {
+    font-family: 'Courier New', sans-serif;
+    background-color: #b87cc4;
+    
 }
 
-ul li.unchecked {
-    color: #020202;
-    text-decoration: none;
+.container {
+    width: 100%;
+    background-color: #ffffff;
 }
+
+h2 {
+    color: #041312;
+}
+
+label {
+    font-weight: bold;
+}
+
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    font-family: 'Arial', sans-serif;
+    border: none;
+    background-color: #c300ff;
+    color: #4a0f47;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #50045d;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+.dialog h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+.dialog button:hover {
+    background-color: #700674;
+}
+
