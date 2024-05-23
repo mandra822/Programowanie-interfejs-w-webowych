@@ -6,6 +6,8 @@ import BrowseSection from './BrowseSection';
 import HotelCard from './HotelCard';
 import './App.css';
 
+import Modal from 'react-modal';
+
 function App() {
   return (
     <div className="App">
@@ -14,6 +16,7 @@ function App() {
       <BrowseSection />
       
       </div>
+      
   );
 }
 
