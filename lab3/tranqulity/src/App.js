@@ -1,22 +1,33 @@
 // App.js
-import React from 'react';
-import Navigation from './Navigation';
-import EntrySection from './EntrySection';
-import BrowseSection from './BrowseSection';
-import HotelCard from './HotelCard';
-import './App.css';
-
-import Modal from 'react-modal';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navigation from "./Navigation";
+import EntrySection from "./EntrySection";
+import BrowseSection from "./BrowseSection";
+import HotelCard from "./HotelCard";
+import HotelPage from "./HotelPage";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <EntrySection />
-      <BrowseSection />
-      
-      </div>
-      
+      <Router>
+        <Navigation />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <Navigation />
+                <EntrySection />
+                <BrowseSection />
+              </div>
+            }
+          />
+          <Route path="/hotel/:id" element={<HotelPage />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
