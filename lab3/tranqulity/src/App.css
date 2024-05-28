@@ -147,7 +147,7 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 24px;
   padding: 64px;
 }
@@ -295,6 +295,7 @@ body {
   display: flex;
   flex-wrap: wrap; /* Wielowierszowe układanie elementów */
   justify-content: space-between; /* Rozłożenie elementów równomiernie wzdłuż osi głównej */
+  width: 100%;
 }
 
 .browse-section {

@@ -57,7 +57,7 @@ function HotelPage() {
         </div>
         <article className="footer-details">
           <p className="text-small">
-            <span style={{ fontWeight: "bold" }}>Location:</span> {data.country}{" "}
+            <span style={{ fontWeight: "bold" }}>Location:</span> {data.city}{" "}
             <br />
             <span style={{ fontWeight: "bold" }}>Local category:</span>{" "}
             {data.stars} <br />
