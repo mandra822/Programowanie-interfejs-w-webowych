@@ -7,6 +7,8 @@ import BrowseSection from "./BrowseSection";
 import HotelCard from "./HotelCard";
 import HotelPage from "./HotelPage";
 import "./App.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <Route path="/hotel/:id" element={<HotelPage />} />
         </Routes>
       </Router>
+      <ToastContainer />
     </div>
   );
 }

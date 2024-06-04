@@ -422,14 +422,14 @@ body {
   
   width: 30%;
   min-height: 350px;
-  height: 50%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(162, 194, 129, 0.821);
+  background-color: rgba(152, 229, 59, 0.821);
   padding: 30px;
-  border-radius: var(--radius-small);
+  border-radius: 50px;
 }
 
 .auth-modal > h2 {

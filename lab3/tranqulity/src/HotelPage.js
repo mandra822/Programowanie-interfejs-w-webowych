@@ -1,14 +1,32 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import Modal from "react-modal";
 import { hotelsList, getHotelById } from "./data/HotelsData";
+import {toast} from "react-toastify";
+
 
 
 function HotelPage() {
   const { id } = useParams();
 
+  const fromRef = useRef();
+  const toRef = useRef();
+  const themeRef = useRef();
+  const textRef = useRef();
+
   const [data, setData] = useState({}); 
   const [isLoading, setIsLoading] = useState(true); 
+  const [modalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => {
+    setModalVisible(!modalVisible)
+  }
+
+  const sendEmail = () =>{
+    toast.info("Wysłano pomyślnie!");
+    setModalVisible(false);
+  }
+
 
   useEffect(() => {
    
@@ -36,24 +54,7 @@ function HotelPage() {
             backgroundImage: `url(${require(`./Assets/${data.image_large}`)})`,
           }}
         >
-          <div className="chip-right">
-            {" "}
-            Add to favourites
-            <svg
-              width="23"
-              height="21"
-              viewBox="0 0 23 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22 7.15533C22 8.77914 21.3765 10.3388 20.2631 11.4925C17.7001 14.1492 15.2143 16.9194 12.5556 19.4797C11.9461 20.058 10.9794 20.0369 10.3962 19.4324L2.73645 11.4925C0.421185 9.09256 0.421185 5.21809 2.73645 2.81815C5.07446 0.394622 8.88333 0.394622 11.2213 2.81815L11.4998 3.10674L11.778 2.81832C12.899 1.65573 14.4257 1 16.0206 1C17.6154 1 19.142 1.65566 20.2631 2.81815C21.3766 3.97197 22 5.53156 22 7.15533Z"
-                stroke="#50614A"
-                strokeWidth="2"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
+          
         </div>
         <article className="footer-details">
           <p className="text-small">
@@ -66,7 +67,7 @@ function HotelPage() {
             <span style={{ fontWeight: "bold" }}>Description:</span>
           </p>
           <p className="text-small">{data.description}</p>
-          <button className="button primary">
+          <button onClick = {toggleModal} className="button primary">
             Contact{" "}
             <svg
               width="18"
@@ -105,6 +106,49 @@ function HotelPage() {
           </div>
         </article>
       </section>
+      <Modal
+        isOpen={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+        className="auth-modal"
+      >
+        <h2>Send Email</h2>
+        <form onSubmit={sendEmail}>
+          <label>
+            From:
+            <input
+              type="email"
+              required ref={fromRef}
+            />
+          </label>
+
+          <label>
+            To:
+            <input
+              type="email"
+              required ref={toRef}
+            />
+          </label>
+
+          <label>
+            Theme:
+            <input
+              type="text"
+              required ref={themeRef}
+            />
+          </label>
+
+          <label>
+            <input
+              type="text"
+              required ref={textRef}
+            />
+          </label>
+
+          <button type="submit" className="button primary">
+            Send email
+          </button>
+        </form>
+      </Modal>
     </div>
   );
 }
