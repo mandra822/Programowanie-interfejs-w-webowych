@@ -1,4 +1,4 @@
-// BrowseSection.js
+
 import React from "react";
 import HotelCard from "./HotelCard";
 import { useUser } from "./data/UserAuth";
